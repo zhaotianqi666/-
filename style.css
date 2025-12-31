@@ -1,0 +1,196 @@
+/* 顶部祝福语滚动栏 */
+.top-blessing {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffd700;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 100;
+}
+.blessing-text {
+    display: inline-block;
+    animation: scrollText 20s linear infinite;
+}
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: url("images/bg.png") center/cover fixed;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px 0;
+    overflow-x: hidden;
+    padding-top: 50px; /* 给顶部滚动栏留空间 */
+}
+.container {
+    background: transparent;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+}
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #000;
+}
+.date {
+    font-size: 1.2em;
+    color: #ccc;
+    text-shadow: 0 0 5px #000;
+}
+.message {
+    font-size: 1.4em;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 40px;
+    text-shadow: 0 0 5px #000;
+}
+.signature {
+    text-align: right;
+    font-style: italic;
+    margin-top: 20px;
+    text-shadow: 0 0 5px #000;
+}
+.luck-btn {
+    background: linear-gradient(135deg, #ffc107, #ff9800);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+    transition: transform 0.2s;
+    display: block;
+    margin: 0 auto 30px;
+}
+.luck-btn:active { transform: scale(0.95); }
+.photo-scroll-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+    margin: 20px 0;
+}
+.photo-row {
+    display: flex;
+    gap: 15px;
+    animation: scroll 20s linear infinite;
+}
+.photo-row img {
+    height: 150px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+.photo-row img:hover { transform: scale(1.1); }
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+footer {
+    text-align: center;
+    font-size: 1.1em;
+    color: #ddd;
+    text-shadow: 0 0 5px #000;
+    margin-top: 20px;
+}
+#fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transition: all 0.8s ease-out;
+}
+.luck-plus {
+    position: fixed;
+    color: #ffc107;
+    font-size: 2em;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 999;
+    animation: floatUp 1s ease-out forwards;
+}
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-50px); opacity: 0; }
+}
+.particle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999;
+    animation: particleAnim 1s ease-out forwards;
+}
+@keyframes particleAnim {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(3) translateY(-30px); opacity: 0; }
+}
+.floating-icon {
+    position: fixed;
+    font-size: 1.5em;
+    pointer-events: none;
+    z-index: 999;
+    animation: floatIcon 4s linear infinite;
+}
+@keyframes floatIcon {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+.blessing-popup {
+    position: fixed;
+    background: transparent;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 999;
+    animation: floatUp 2s ease-out forwards;
+}
+.snowflake {
+    position: fixed;
+    color: #fff;
+    font-size: 1.5em;
+    pointer-events: none;
+    z-index: 100;
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
